@@ -1,4 +1,5 @@
 import PropTypes from 'prop-types';
+import { BsBookmark } from 'react-icons/bs';
 
 const Blog = ({ blog }) => {
   const {
@@ -11,13 +12,13 @@ const Blog = ({ blog }) => {
     hashtags,
   } = blog;
   return (
-    <div>
+    <div className=" mb-20">
       <img
         src={cover}
-        className="rounded-lg"
+        className="rounded-lg w-full mb-8"
         alt={`Cover picture of the title ${title}`}
       />
-      <div className="flex justify-between items-center">
+      <div className="flex justify-between items-center mb-4">
         <div className=" flex gap-6">
           <img src={author_image} className=" w-14" alt="" />
           <div>
@@ -25,8 +26,11 @@ const Blog = ({ blog }) => {
             <p className="text-[#11111199] font-semibold">{posted_date}</p>
           </div>
         </div>
-        <div>
+        <div className="flex items-center">
           <span>{reading_time} min read</span>
+          <button className="ml-2 text-xl">
+            <BsBookmark></BsBookmark>
+          </button>
         </div>
       </div>
       <h3 className="text-4xl font-bold">{title}</h3>
