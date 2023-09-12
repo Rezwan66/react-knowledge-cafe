@@ -1,7 +1,7 @@
 import PropTypes from 'prop-types';
 import { BsBookmark } from 'react-icons/bs';
 
-const Blog = ({ blog }) => {
+const Blog = ({ blog, handleAddToBookmark }) => {
   const {
     title,
     cover,
@@ -28,7 +28,10 @@ const Blog = ({ blog }) => {
         </div>
         <div className="flex items-center">
           <span>{reading_time} min read</span>
-          <button className="ml-2 text-xl">
+          <button
+            onClick={() => handleAddToBookmark(blog)}
+            className="ml-2 text-xl"
+          >
             <BsBookmark></BsBookmark>
           </button>
         </div>
